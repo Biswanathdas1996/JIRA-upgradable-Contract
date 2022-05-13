@@ -1,0 +1,73 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "D:\\Block chain\\WEB-3-Scholarship-upgradable\\contracts\\JIRA.sol": {
+      "lastModificationDate": 1652408716440,
+      "contentHash": "9df9467daa941082ca121455972881e7",
+      "sourceName": "contracts/JIRA.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.13"
+      ],
+      "artifacts": [
+        "JIRA"
+      ]
+    },
+    "D:\\Block chain\\WEB-3-Scholarship-upgradable\\contracts\\JIRAV2.sol": {
+      "lastModificationDate": 1652409112550,
+      "contentHash": "e3b4d446bd5f0fea8d46c4a619f04279",
+      "sourceName": "contracts/JIRAV2.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.13"
+      ],
+      "artifacts": [
+        "JIRAV2"
+      ]
+    }
+  }
+}

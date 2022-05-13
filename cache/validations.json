@@ -1,0 +1,436 @@
+{
+  "version": "3.2",
+  "log": [
+    {
+      "JIRA": {
+        "src": "contracts\\JIRA.sol:5",
+        "version": {
+          "withMetadata": "fb1b497928d73543991b6d83f6f58888c29701c83272ecb04debb29b14212280",
+          "withoutMetadata": "f99e769e68117b0bd3b29794f14bd5c3773e364c2c2b40ddb65128953f32b351",
+          "linkedWithoutMetadata": "f99e769e68117b0bd3b29794f14bd5c3773e364c2c2b40ddb65128953f32b351"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "initialize()",
+          "createSprint(string,string,string,string)",
+          "addConfluence(string)",
+          "activeNewSprint(uint256,string)",
+          "getAllSprints()",
+          "login(string)",
+          "addUser(string,string,string,string,string)",
+          "getAllUser()",
+          "setUserAbi(string,string)",
+          "setBoardDataToUser(string,string)",
+          "createTicket(string,string,string,string,string)",
+          "setComments(string,uint256,string)",
+          "setTicketTracking(string,uint256)",
+          "setSprintToTicket(string,uint256,string)",
+          "changePosition(string,uint256,string,string,string)",
+          "assignOwner(string,uint256,string,string)",
+          "updateTicket(string,uint256,string,bool)",
+          "getAllTickets()",
+          "getTicketsAbi(uint256)",
+          "getTicketsOwnerImg(uint256)",
+          "transferTicket(string,string,string,string,uint256,string)",
+          "updateTicketOwner(string,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "JIRA",
+              "label": "users",
+              "type": "t_mapping(t_string_memory_ptr,t_struct(User)51_storage)",
+              "src": "contracts\\JIRA.sol:42"
+            },
+            {
+              "contract": "JIRA",
+              "label": "sprints",
+              "type": "t_array(t_struct(Sprint)12_storage)dyn_storage",
+              "src": "contracts\\JIRA.sol:43"
+            },
+            {
+              "contract": "JIRA",
+              "label": "tickets",
+              "type": "t_array(t_struct(Ticket)38_storage)dyn_storage",
+              "src": "contracts\\JIRA.sol:44"
+            },
+            {
+              "contract": "JIRA",
+              "label": "userList",
+              "type": "t_array(t_string_storage)dyn_storage",
+              "src": "contracts\\JIRA.sol:45"
+            },
+            {
+              "contract": "JIRA",
+              "label": "manager",
+              "type": "t_address",
+              "src": "contracts\\JIRA.sol:46"
+            },
+            {
+              "contract": "JIRA",
+              "label": "project",
+              "type": "t_string_storage",
+              "src": "contracts\\JIRA.sol:47"
+            },
+            {
+              "contract": "JIRA",
+              "label": "confluence",
+              "type": "t_string_storage",
+              "src": "contracts\\JIRA.sol:48"
+            },
+            {
+              "contract": "JIRA",
+              "label": "activeSprintId",
+              "type": "t_uint256",
+              "src": "contracts\\JIRA.sol:49"
+            }
+          ],
+          "types": {
+            "t_mapping(t_string_memory_ptr,t_struct(User)51_storage)": {
+              "label": "mapping(string => struct JIRA.User)"
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_struct(User)51_storage": {
+              "label": "struct JIRA.User",
+              "members": [
+                {
+                  "label": "name",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "role",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "boardData",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "profileImg",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "abiLink",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "uid",
+                  "type": "t_string_storage"
+                }
+              ]
+            },
+            "t_array(t_struct(Sprint)12_storage)dyn_storage": {
+              "label": "struct JIRA.Sprint[]"
+            },
+            "t_struct(Sprint)12_storage": {
+              "label": "struct JIRA.Sprint",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "name",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "startDate",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "enddate",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "abiLink",
+                  "type": "t_string_storage"
+                }
+              ]
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_array(t_struct(Ticket)38_storage)dyn_storage": {
+              "label": "struct JIRA.Ticket[]"
+            },
+            "t_struct(Ticket)38_storage": {
+              "label": "struct JIRA.Ticket",
+              "members": [
+                {
+                  "label": "index",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "sprintId",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "id",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "abiLink",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "repoter",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "position",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "status",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "tracking",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "comments",
+                  "type": "t_string_storage"
+                }
+              ]
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_array(t_string_storage)dyn_storage": {
+              "label": "string[]"
+            },
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "JIRAV2": {
+        "src": "contracts\\JIRAV2.sol:5",
+        "version": {
+          "withMetadata": "ad6a0d6a4c39c1fa333b000ec603f570f27c4c58cd727bbb329c9dfa1e4fe353",
+          "withoutMetadata": "8cb5002adc3d748c0886b1dee49bb420fa253a8b3f385c248c7980aa708fdbc7",
+          "linkedWithoutMetadata": "8cb5002adc3d748c0886b1dee49bb420fa253a8b3f385c248c7980aa708fdbc7"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "initialize()",
+          "createSprint(string,string,string,string)",
+          "addConfluence(string)",
+          "activeNewSprint(uint256,string)",
+          "getAllSprints()",
+          "login(string)",
+          "addUser(string,string,string,string,string)",
+          "getAllUser()",
+          "setUserAbi(string,string)",
+          "setBoardDataToUser(string,string)",
+          "createTicket(string,string,string,string,string)",
+          "setComments(string,uint256,string)",
+          "setTicketTracking(string,uint256)",
+          "setSprintToTicket(string,uint256,string)",
+          "changePosition(string,uint256,string,string,string)",
+          "assignOwner(string,uint256,string,string)",
+          "updateTicket(string,uint256,string,bool)",
+          "getAllTickets()",
+          "getTicketsAbi(uint256)",
+          "getTicketsOwnerImg(uint256)",
+          "transferTicket(string,string,string,string,uint256,string)",
+          "updateTicketOwner(string,uint256)",
+          "getManager()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "JIRAV2",
+              "label": "users",
+              "type": "t_mapping(t_string_memory_ptr,t_struct(User)690_storage)",
+              "src": "contracts\\JIRAV2.sol:42"
+            },
+            {
+              "contract": "JIRAV2",
+              "label": "sprints",
+              "type": "t_array(t_struct(Sprint)651_storage)dyn_storage",
+              "src": "contracts\\JIRAV2.sol:43"
+            },
+            {
+              "contract": "JIRAV2",
+              "label": "tickets",
+              "type": "t_array(t_struct(Ticket)677_storage)dyn_storage",
+              "src": "contracts\\JIRAV2.sol:44"
+            },
+            {
+              "contract": "JIRAV2",
+              "label": "userList",
+              "type": "t_array(t_string_storage)dyn_storage",
+              "src": "contracts\\JIRAV2.sol:45"
+            },
+            {
+              "contract": "JIRAV2",
+              "label": "manager",
+              "type": "t_address",
+              "src": "contracts\\JIRAV2.sol:46"
+            },
+            {
+              "contract": "JIRAV2",
+              "label": "project",
+              "type": "t_string_storage",
+              "src": "contracts\\JIRAV2.sol:47"
+            },
+            {
+              "contract": "JIRAV2",
+              "label": "confluence",
+              "type": "t_string_storage",
+              "src": "contracts\\JIRAV2.sol:48"
+            },
+            {
+              "contract": "JIRAV2",
+              "label": "activeSprintId",
+              "type": "t_uint256",
+              "src": "contracts\\JIRAV2.sol:49"
+            }
+          ],
+          "types": {
+            "t_mapping(t_string_memory_ptr,t_struct(User)690_storage)": {
+              "label": "mapping(string => struct JIRAV2.User)"
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_struct(User)690_storage": {
+              "label": "struct JIRAV2.User",
+              "members": [
+                {
+                  "label": "name",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "role",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "boardData",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "profileImg",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "abiLink",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "uid",
+                  "type": "t_string_storage"
+                }
+              ]
+            },
+            "t_array(t_struct(Sprint)651_storage)dyn_storage": {
+              "label": "struct JIRAV2.Sprint[]"
+            },
+            "t_struct(Sprint)651_storage": {
+              "label": "struct JIRAV2.Sprint",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "name",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "startDate",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "enddate",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "abiLink",
+                  "type": "t_string_storage"
+                }
+              ]
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_array(t_struct(Ticket)677_storage)dyn_storage": {
+              "label": "struct JIRAV2.Ticket[]"
+            },
+            "t_struct(Ticket)677_storage": {
+              "label": "struct JIRAV2.Ticket",
+              "members": [
+                {
+                  "label": "index",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "sprintId",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "id",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "abiLink",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "repoter",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "position",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "status",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "tracking",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "comments",
+                  "type": "t_string_storage"
+                }
+              ]
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_array(t_string_storage)dyn_storage": {
+              "label": "string[]"
+            },
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      }
+    }
+  ]
+}
